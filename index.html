@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page | Intex</title>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+      </style>
+</head>
+
+<body style="background-image: url('./images/login/bg-image.png');"
+    class="bg-center bg-cover min-w-screen min-h-screen flex items-center justify-center">
+
+    <form style="box-shadow: 0px 0px 11px 0px #00000040;" class="w-[621px] pt-[35px] px-[37px] pb-[46px] h-[519px] bg-[#f8f8f8] rounded-[25px] flex items-center flex-col ">  
+    <img class="mx-auto mb-[17px]" width="421" height="72" src="./images/login/logo.svg" alt="">
+    <p class="text-[#A3A3A3] font-bold text-[25px] text-center leading-[29.03px]">Введите имя пользователя и пароль, чтобы получить доступ к системе.</p>
+    <div class="mt-[70px] flex flex-col gap-4 items-center mb-[47px]">
+        <input style="box-shadow: 0px 0px 7px 0px #00000040;" class="text-center w-[359px] h-[61px] rounded-[17px] placeholder:text-[#A3A3A3] text-[25px] font-bold leading-[29.03px]" type="text" placeholder="Имя пользователя" name="username">
+        <input style="box-shadow: 0px 0px 7px 0px #00000040;" class="text-center w-[359px] h-[61px] rounded-[17px] placeholder:text-[#A3A3A3] text-[25px] font-bold leading-[29.03px]" type="password" placeholder="Пароль" name="password">
+    </div>
+    <button style="box-shadow: 0px 4px 10px 0px #00000040;
+" class="leading-[29.03px] w-[237px] px-[15px] py-2 rounded-[10px] bg-[#3F8C8E] font-bold text-[25px] text-white">Войти</button>
+    </form>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>
