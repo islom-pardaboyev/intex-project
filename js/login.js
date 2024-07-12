@@ -6,7 +6,7 @@ form.addEventListener('submit', evt => {
     const username = evt.target.username.value;
     const password = evt.target.password.value;
 
-    if (username && password) {
+    if (username == 'islom' && password == "123") {
         const regex = /[1-9]/;
 
         if (regex.test(password)) {
@@ -25,7 +25,7 @@ form.addEventListener('submit', evt => {
         }
 
     } else {
-        alert("Username and password are required.");
+        alert("Username and password are wrong.");
     }
 
 });
