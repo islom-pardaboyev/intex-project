@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page | Index</title>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+      </style>
 </head>
 <body>
 
+    <main>
+        <div class="grid grid-col-12">
+            <div class="col-span-2 overflow-y-auto border-r border-red-600 min-h-screen">
+                <a href=""></a>
+            </div>
+            <div class="col-span-8 overflow-y-auto"></div>
+        </div>
+    </main>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
     <script src="js/admin.js"></script>
 </body>
 </html>
