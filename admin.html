@@ -53,22 +53,58 @@
                 <div class="flex items-center justify-between">
                     <label style="box-shadow: 0px 23px 26px 0px #0000000A;
 " class="flex rounded-[40px] justify-between items-center pl-[34px] pr-[24px] w-[377px] h-[64px] bg-white">
-                        <input type="text" autocomplete="off" placeholder="Найти" class="placeholder:font-regular font-regular placeholder:text-[20px] text-[20px] placeholder:leading-[23.22px] outline-none placeholder:text-[#BCBCBC]">
+                        <input type="text" autocomplete="off" placeholder="Найти"
+                            class="placeholder:font-regular font-regular placeholder:text-[20px] text-[20px] placeholder:leading-[23.22px] outline-none placeholder:text-[#BCBCBC]">
                         <span class="inline-block h-[42px] bg-[#E6E6E6] w-px"></span>
                         <img src="/images/admin/search-icon.svg" width="24" height="24" alt="">
                     </label>
-                    <button class="leading-[23.22px] w-[222px] font-regular text-[20px] pl-[14px] pr-[13px] pt-[21px] pb-[20px] text-white bg-[#009398] rounded-[29px]">+ Добавить продукт</button>
+                    <button
+                        class="leading-[23.22px] w-[222px] font-regular text-[20px] pl-[14px] pr-[13px] pt-[21px] pb-[20px] text-white bg-[#009398] rounded-[29px]">+
+                        Добавить продукт</button>
                 </div>
                 <ul class="list flex items-center justify-center mt-[40px] gap-[46px]">
-                    <li id="0" class="navbar-item1 font-bold transition-all duration-300 text-[35px] leading-[40px] text-[#ababab] cursor-pointer pb-[8px] border-b-[3px] ">Каркасные</li>
-                    <li id="1" class="navbar-item2 font-bold transition-all duration-300 text-[35px] leading-[40px] text-[#ababab] cursor-pointer pb-[8px] border-b-[3px] ">Надувные</li>
+                    <li id="0"
+                        class="navbar-item1 font-bold transition-all duration-300 text-[35px] leading-[40px] text-[#ababab] cursor-pointer pb-[8px] border-b-[3px] ">
+                        Каркасные</li>
+                    <li id="1"
+                        class="navbar-item2 font-bold transition-all duration-300 text-[35px] leading-[40px] text-[#ababab] cursor-pointer pb-[8px] border-b-[3px] ">
+                        Надувные</li>
                 </ul>
             </div>
 
 
         </div>
-        
     </main>
+
+    <!-- add modal -->
+    <div class="fixed top-0 left-0 w-full h-full backdrop-blur-md">
+        <form id="addPoolModal" style="box-shadow: 0px 5px 10px 0px #00000040;
+" class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[1130px] pt-[41px] pb-[33px] bg-[#F8F8F8]">
+            <label id="addImgCon" class="flex items-center gap-[29px] rounded-[21.73px] hover:border-cyan-400 hover:bg-cyan-100/10 transition-all border-2 border-[#3A3A3A] border-dashed w-[691px] cursor-pointer py-[126px] px-[130px] mx-auto">
+                <input type="file" class="hidden" id="chooseImg">
+                <img class="mx-auto" src="./images/admin/add-pool-img.png" width="86" height="64" alt="">
+                <p class="text-[#898989] leading-[32.94px] font-normal text-[27px]">Выберите изображение</p>
+            </label>
+            <div class="px-[104px] flex flex-col gap-4">
+                <label>
+                    <span>Категории</span>
+                    <select name="category">
+                        <option value="0">Карасиные</option>
+                        <option value="1">Надувные</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Старая цена (сум)</span>
+                    <input type="number" name="oldPrice" placeholder="Старая цена (сум)">
+                </label>
+                <label>
+                    <span>Новая цена (сум)</span>
+                    <input type="number" name="newPrice" placeholder="Новая цена (сум)">
+                </label>
+            </div>
+            <button>asd</button>
+        </form>
+    </div>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
