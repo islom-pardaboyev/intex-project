@@ -20,11 +20,11 @@
       </style>
 </head>
 
-<body>
+<body class="overflow-hidden">
 
     <main class="flex">
         <header
-            class="flex items-center border-b-2 pr-[61px] pl-[41px] border-gray-300 fixed top-0 left-0 w-full justify-between">
+            class="flex bg-white items-center border-b-2 pr-[61px] pl-[41px] border-gray-300 fixed top-0 left-0 w-full justify-between">
             <a href="./index.html" class="my-[34px]">
                 <img width="230" src="./images/login/logo.svg" alt="">
             </a>
@@ -40,7 +40,7 @@
 
             </div>
         </header>
-        <div class="mt-[126px] w-[25%] h-screen bg-white overflow-y-auto">
+        <div class="mt-[126px] w-[25%] h-screen bg-white ">
             <nav class="pl-[42px] flex flex-col gap-3">
                 <p class="leading-[35px] font-regular text-[25px] text-[#009398] cursor-pointer">Продукты</p>
                 <p class="leading-[35px] font-regular text-[25px] text-[#B4B4C6] cursor-pointer">Заказы</p>
@@ -48,7 +48,7 @@
                 <p class="leading-[35px] font-regular text-[25px] text-[#B4B4C6] cursor-pointer">Сайт</p>
             </nav>
         </div>
-        <div class="w-[75%] h-screen overflow-y-auto bg-gray-200">
+        <div class="w-[75%] h-screen  bg-gray-200">
             <div class="mt-[115px] pl-[42px] pr-[48px]">
                 <div class="flex items-center justify-between">
                     <label style="box-shadow: 0px 23px 26px 0px #0000000A;
@@ -58,18 +58,29 @@
                         <span class="inline-block h-[42px] bg-[#E6E6E6] w-px"></span>
                         <img src="/images/admin/search-icon.svg" width="24" height="24" alt="">
                     </label>
-                    <button
+                    <button onclick="showModal()"
                         class="leading-[23.22px] w-[222px] font-regular text-[20px] pl-[14px] pr-[13px] pt-[21px] pb-[20px] text-white bg-[#009398] rounded-[29px]">+
                         Добавить продукт</button>
                 </div>
                 <ul class="list flex items-center justify-center mt-[40px] gap-[46px]">
                     <li id="0"
-                        class="navbar-item1 font-bold transition-all duration-300 text-[35px] leading-[40px] text-[#ababab] cursor-pointer pb-[8px] border-b-[3px] ">
+                        class="navbar-item1 !text-[#009398] !border-[#009398] font-bold transition-all duration-300 text-[35px] leading-[40px] text-[#ababab] cursor-pointer pb-[8px] border-b-[3px] ">
                         Каркасные</li>
                     <li id="1"
                         class="navbar-item2 font-bold transition-all duration-300 text-[35px] leading-[40px] text-[#ababab] cursor-pointer pb-[8px] border-b-[3px] ">
                         Надувные</li>
                 </ul>
+                <div class="mt-[66px]">
+                    <div class="w-full pl-[50px] pr-[26px] bg-white py-[17px] text-[20px] rounded-[30px] flex items-center justify-between mb-[22px]">
+                        <p>Изображение</p>
+                        <p>Цена(сум)</p>
+                        <p>Количество</p>
+                        <p>Рамка</p>
+                        <p>Действия</p>
+                    </div>
+                    <div id="poolCon" class="pools-con h-[800px] overflow-scroll p-3 flex flex-col gap-2">
+                    </div>
+                </div>
             </div>
 
 
@@ -77,33 +88,7 @@
     </main>
 
     <!-- add modal -->
-    <div class="fixed top-0 left-0 w-full h-full backdrop-blur-md">
-        <form id="addPoolModal" style="box-shadow: 0px 5px 10px 0px #00000040;
-" class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[1130px] pt-[41px] pb-[33px] bg-[#F8F8F8]">
-            <label id="addImgCon" class="flex items-center gap-[29px] rounded-[21.73px] hover:border-cyan-400 hover:bg-cyan-100/10 transition-all border-2 border-[#3A3A3A] border-dashed w-[691px] cursor-pointer py-[126px] px-[130px] mx-auto">
-                <input type="file" class="hidden" id="chooseImg">
-                <img class="mx-auto" src="./images/admin/add-pool-img.png" width="86" height="64" alt="">
-                <p class="text-[#898989] leading-[32.94px] font-normal text-[27px]">Выберите изображение</p>
-            </label>
-            <div class="px-[104px] flex flex-col gap-4">
-                <label>
-                    <span>Категории</span>
-                    <select name="category">
-                        <option value="0">Карасиные</option>
-                        <option value="1">Надувные</option>
-                    </select>
-                </label>
-                <label>
-                    <span>Старая цена (сум)</span>
-                    <input type="number" name="oldPrice" placeholder="Старая цена (сум)">
-                </label>
-                <label>
-                    <span>Новая цена (сум)</span>
-                    <input type="number" name="newPrice" placeholder="Новая цена (сум)">
-                </label>
-            </div>
-            <button>asd</button>
-        </form>
+    <div id="addPoolModal" class="fixed top-0 left-0 w-full h-full scale-0 backdrop-blur-md">
     </div>
 
     <script src="https://cdn.tailwindcss.com"></script>
