@@ -4,6 +4,7 @@ document.querySelector("#username").textContent = JSON.parse(window.localStorage
 
 let navbarList = document.querySelector('.list');
 let poolCon = document.querySelector("#poolCon");
+
 let poolsArray = JSON.parse(window.localStorage.getItem("poolsArray")) || [];
 
 let addPoolModal = document.querySelector("#addPoolModal");
@@ -38,7 +39,7 @@ function renderPools(arr, list) {
             <img src=${item.imgURl} width="110" height="41" alt="">
             <div class="flex flex-col">
                 <div class="relative w-fit">
-                    <span>${item.oldPrice} сум</span>
+                    <span class="text-[#848484]">${item.oldPrice} сум</span>
                     <img src="/images/admin/line.png" width="100" class="absolute top-1 left-0" alt="">
                 </div>
                 <strong class="text-[20px]">${item.newPrice} сум</strong>
@@ -65,9 +66,9 @@ function deletePool(id) {
 function editPool(id) {
     const pool = poolsArray.find(pool => pool.id === id);
 
-    addPoolModal.classList.add("!scale-100", "transition-all", "duration-300");
+    addPoolModal.classList.add("!scale-100", "transition-all", "duration-300",);
     addPoolModal.innerHTML = `
-        <form style="box-shadow: 0px 5px 10px 0px #00000040;" class="absolute top-[50%] left-[50%] bg-gray-300 translate-x-[-50%] px-[113px] translate-y-[-50%] w-[1130px] pt-[41px] pb-[33px] bg-[#F8F8F8]">
+        <form style="box-shadow: 0px 5px 10px 0px #00000040;" class="absolute rounded-[30px] top-[50%] left-[50%] bg-gray-300 translate-x-[-50%] px-[113px] translate-y-[-50%] w-[1130px] pt-[41px] pb-[33px] bg-[#F8F8F8]">
             <label id="addImgCon" class="">
                 <input type="file" class="hidden" id="chooseImg">
                 <img id="choosen-img" class="mx-auto max-w-[631px] max-h-[316px]" src=${pool.imgURl} alt="">
