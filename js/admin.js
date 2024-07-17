@@ -57,9 +57,12 @@ function renderPools(arr, list) {
 
 function deletePool(id) {
     const index = poolsArray.findIndex(pool => pool.id === id);
-    poolsArray.splice(index, 1);
+    if(index !== -1){
+        poolsArray.splice(index, 1);
     window.localStorage.setItem("poolsArray", JSON.stringify(poolsArray));
-    renderPools(poolsArray.filter(item => item.category == selectedCategory), poolCon);
+    renderPools(poolsArray.filter(pool => pool.id !== index), poolCon);
+    }
+    
 }
 
 
